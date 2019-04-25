@@ -1,0 +1,23 @@
+{
+  "name": "jscourse",
+  "version": "1.0.0",
+  "description": "Project for Mocha test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexCoreNait/JSCourse.git"
+  },
+  "author": "AK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexCoreNait/JSCourse/issues"
+  },
+  "homepage": "https://github.com/AlexCoreNait/JSCourse#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
