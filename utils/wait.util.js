@@ -8,32 +8,33 @@ const doWait = (action, interval, expectedValue) => {
         }
         setTimeout(() => reject(actualValue), interval);
     });
-}
+};
 
-const retrier = (action, maxCount, interval, expectedValue, count = 0) => {
+const retrierAwait = async (action, maxCount, interval, expectedValue, count = 0) => {
     count++;
     logger.info(`[${count}] Wait for ${expectedValue}`);
-    return doWait(action, interval, expectedValue).then(() => {
+    try{
+        await doWait(action, interval, expectedValue);
         logger.warning('Was able to reach expected conditions.');
         return true;
-    }, (actualValue) => {
+    } catch (actualValue) {
         if (maxCount <= count) {
             logger.warning('Was not able to reach expected conditions.');
             logger.warning(`The last actual value: "${actualValue}"`);  
             return false;
         } else {
-            return retrier(action, maxCount, interval, expectedValue, count);
+            return retrierAwait(action, maxCount, interval, expectedValue, count);
         }
-    });
-}
+    }
+};
 
 class Wait {
     forTrue(action, maxCount, interval){
-        return retrier(action, maxCount, interval, true);    
+        return retrierAwait(action, maxCount, interval, true);    
     }
 
     forFalse(action, maxCount, interval){
-        return retrier(action, maxCount, interval, false);   
+        return retrierAwait(action, maxCount, interval, false);   
     }
 }
 

@@ -23,7 +23,7 @@ describe('Date Time Utils', () => {
 
     it('Check "days difference"', () => {
         const leftDay = 25;
-        const rightDay = 20
+        const rightDay = 20;
         const date = new Date();
         var expectedDayDiff = leftDay > rightDay ? leftDay - rightDay : rightDay - leftDay;
         var actualDayDiff = dateTime.daysDifference(date.setDate(leftDay), date.setDate(rightDay));
