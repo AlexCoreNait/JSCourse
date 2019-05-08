@@ -22,11 +22,12 @@ describe('Date Time Utils', () => {
     });
 
     it('Check "days difference"', () => {
-        const leftDay = 25;
-        const rightDay = 20;
         const date = new Date();
-        var expectedDayDiff = leftDay > rightDay ? leftDay - rightDay : rightDay - leftDay;
-        var actualDayDiff = dateTime.daysDifference(date.setDate(leftDay), date.setDate(rightDay));
-        assert.strictEqual(actualDayDiff, expectedDayDiff, 'Day difference is incorrect.');
+        const leftDate = date;
+        const rightDate = date;
+        leftDate.setMonth('3');
+        const expectedDiff = (leftDate - rightDate) / (24*60*60*1000);
+        var actualDayDiff = dateTime.daysDifference(leftDate, rightDate);
+        assert.strictEqual(actualDayDiff, expectedDiff < 0 ? -expectedDiff : expectedDiff, 'Day difference is incorrect.');
     });
 });
