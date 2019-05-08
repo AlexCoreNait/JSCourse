@@ -9,7 +9,7 @@ class DateTimeUtil {
     }
 
     daysDifference(leftDate, rightDate){
-        var result = new Date(leftDate).getDate() - new Date(rightDate).getDate();
+        var result = (new Date(leftDate) - new Date(rightDate)) / (24*60*60*1000);
         return result < 0 ? -result : result;
     }
 }
