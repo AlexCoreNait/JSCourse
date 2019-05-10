@@ -12,6 +12,11 @@ class DateTimeUtil {
         let result = (new Date(leftDate) - new Date(rightDate)) / (24*60*60*1000);
         return result < 0 ? -result : result;
     }
+
+    getDateMinusTenDays() {
+        const days = 10;
+        return new Date(this.today() - days*24*60*60*1000);
+    }
 }
 
 module.exports = new DateTimeUtil();

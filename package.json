@@ -4,7 +4,10 @@
   "description": "Project for Mocha test",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test:rate": "mocha --recursive \"test/exchangerate/\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +21,10 @@
   "homepage": "https://github.com/AlexCoreNait/JSCourse#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "mocha": "^6.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }
