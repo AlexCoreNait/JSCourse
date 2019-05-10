@@ -4,13 +4,18 @@ class DateTimeUtil {
     }
 
     setYear(date, year) {
-        var newDate = new Date(date);
+        let newDate = new Date(date);
         return new Date(newDate.setFullYear(year));
     }
 
     daysDifference(leftDate, rightDate) {
-        var result = (new Date(leftDate) - new Date(rightDate)) / (24*60*60*1000);
+        let result = (new Date(leftDate) - new Date(rightDate)) / (24*60*60*1000);
         return result < 0 ? -result : result;
+    }
+
+    getDateMinusTenDays() {
+        const days = 10;
+        return new Date(this.today() - days*24*60*60*1000);
     }
 }
 

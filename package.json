@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "test:rate": "mocha --recursive \"test/exchangerate/\""
   },
   "repository": {
     "type": "git",

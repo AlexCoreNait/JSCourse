@@ -6,25 +6,25 @@ describe('Wait Test', () => {
     it('should wait for true "true"', async () => {
         const wait = new Wait();
         const result = await wait.forTrue(() => true, 5, 1000);
-        return assert.isTrue(result);
+        assert.isTrue(result);
     });
 
     it('should wait for true "false"', async () => {
         const wait = new Wait();
         const result = await wait.forTrue(() => false, 5, 1000);
-        return assert.isFalse(result);
+        assert.isFalse(result);
     });
 
     it('should wait for false "true"', async () => {
         const wait = new Wait();
         const result = await wait.forFalse(() => false, 5, 1000);
-        return assert.isTrue(result);
+        assert.isTrue(result);
     });
 
     it('should wait for false "false"', async () => {
         const wait = new Wait();
         const result = await wait.forFalse(() => true, 5, 1000);
-        return assert.isFalse(result);
+        assert.isFalse(result);
     });
 
     it('should wait for multiple false', async () => {

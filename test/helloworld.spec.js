@@ -16,18 +16,18 @@ describe('Date Time Utils', () => {
 
     it('Check "set year"', () => {
         const year = 2017;
-        const date = new Date();
-        var expectedDate = new Date(date.setFullYear(year));
+        let date = new Date();
+        let expectedDate = new Date(date.setFullYear(year));
         assert.strictEqual(dateTime.setYear(date, year).toDateString(), expectedDate.toDateString(), 'Incorrect year is set.');
     });
 
     it('Check "days difference"', () => {
         const date = new Date();
-        const leftDate = date;
-        const rightDate = date;
+        let leftDate = date;
+        let rightDate = date;
         leftDate.setMonth('3');
-        const expectedDiff = (leftDate - rightDate) / (24*60*60*1000);
-        var actualDayDiff = dateTime.daysDifference(leftDate, rightDate);
+        let expectedDiff = (leftDate - rightDate) / (24*60*60*1000);
+        let actualDayDiff = dateTime.daysDifference(leftDate, rightDate);
         assert.strictEqual(actualDayDiff, expectedDiff < 0 ? -expectedDiff : expectedDiff, 'Day difference is incorrect.');
     });
 });
