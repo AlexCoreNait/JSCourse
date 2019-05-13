@@ -4,7 +4,7 @@ const BasePage = require('../../framework/basePage');
 
 class HomePage extends BasePage {
     constructor(browser) {
-        super(browser);
+        super(browser, locators.page, 'Home Page');
     }
 
     async search(text) {
