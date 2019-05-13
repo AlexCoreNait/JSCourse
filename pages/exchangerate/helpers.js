@@ -1,4 +1,4 @@
-const consts = require('../exchangerate/constants');
+const consts = require('./constants');
 
 const getParsedDate = (date) => {
     let year = new Date(date).getFullYear().toString();

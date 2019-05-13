@@ -1,7 +1,7 @@
 let chai = require('chai');
 const chaiHttp = require('chai-http');
-const consts = require('../exchangerate/constants');
-const helper = require('../exchangerate/helpers');
+const consts = require('./constants');
+const helper = require('./helpers');
 const dateTime = require('../../utils/dateTime.util');
 const logger = require('../../utils/log.util');
 chai.use(chaiHttp);
